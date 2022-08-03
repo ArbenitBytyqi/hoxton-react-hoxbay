@@ -1,14 +1,22 @@
-import Header from './components/Header'
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import { Basket } from "./pages/Basket";
+import { Categories } from "./pages/Categories";
+import { Home } from "./pages/Home";
 
 function App() {
   return (
     <>
       <Header />
       <main>
-        {/* Create your routes here. Don't forget to install the router package! */}
+        <Routes>
+          <Route path="/products" element={<Home />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/basket" element={<Basket />} />
+        </Routes>
       </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

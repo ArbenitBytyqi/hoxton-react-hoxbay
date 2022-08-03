@@ -1,35 +1,21 @@
-import { getRandomColor } from "../helpers";
+import { Link } from "react-router-dom";
 
-function Header() {
-  const randomColor = getRandomColor();
+export default function Header() {
   return (
-    <header
-      className="header"
-      style={{
-        // @ts-ignore
-        ["--random-colour"]: `var(--${randomColor})`
-      }}
-    >
-      <div className="header__logo" style={{ color: randomColor }}>
-        Hoxbay
-      </div>
+    <header>
       <nav className="header__nav">
         <ul>
           <li>
-            {/* Create here a link to this page */}
-            Home
+            <Link to="/home">Home</Link>
           </li>
           <li>
-            {/* Create here a link to this page */}
-            Categories
+            <Link to="/categories">Categories</Link>
           </li>
           <li>
-            {/* Create here a link to this page */}
-            Basket
+            <Link to="/basket">Basket</Link>
           </li>
         </ul>
       </nav>
     </header>
   );
 }
-export default Header;
